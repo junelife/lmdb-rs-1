@@ -13,5 +13,9 @@ fn main() {
         config.flag("-DMDB_FDATASYNC=fsync");
     }
 
+    if target.contains("android") {
+        config.define("ANDROID", None);
+    }
+
     config.compile("liblmdb.a");
 }
