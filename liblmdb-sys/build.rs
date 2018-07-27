@@ -15,6 +15,7 @@ fn main() {
 
     if target.contains("android") {
         config.define("ANDROID", None);
+        config.flag("-D__ANDROID_API__=21");
     }
 
     config.compile("liblmdb.a");
